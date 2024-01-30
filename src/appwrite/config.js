@@ -14,8 +14,14 @@ export class Service{
         this.bucket = new Storage(this.client);
     }
 
-    async createPost({title, slug, content, featuredimage, status, userId}){
+    async createPost({ title, slug, content, featuredImage, status, userId }) {
         try {
+            console.log("Data being sent to createPost:", { title, slug, content, featuredImage, status, userId });
+    
+            if (!featuredImage) {
+                throw new Error('Invalid document structure: Missing required attribute "featuredimage"');
+            }
+    
             return await this.databases.createDocument(
                 conf.appwritedatabaseid,
                 conf.appwritecollectionid,
@@ -23,17 +29,18 @@ export class Service{
                 {
                     title,
                     content,
-                    featuredimage,
+                    featuredImage,
                     status,
                     userId,
                 }
-            )
+            );
         } catch (error) {
-            console.log("Appwrite serive :: createPost :: error", error);
+            console.log("Appwrite service :: createPost :: error", error);
+            throw error;
         }
     }
-
-    async updatePost(slug, {title, content, featuredimage, status}){
+    
+    async updatePost(slug, {title, content, featuredImage, status}){
         try {
             return await this.databases.updateDocument(
                 conf.appwritedatabaseid,
@@ -42,7 +49,7 @@ export class Service{
                 {
                     title,
                     content,
-                    featuredimage,
+                    featuredImage,
                     status,
 
                 }
@@ -98,18 +105,21 @@ export class Service{
 
     // file upload service
 
-    async uploadFile(file) {
+    async uploadFile(fileID) {
         try {
+            // Using the Appwrite SDK's createFile method to upload the file
             return await this.bucket.createFile(
-                conf.appwritebucketid,
-                ID.unique(),
-                file
+                conf.appwritebucketid, // Bucket ID
+                ID.unique(),           // Generating a unique ID for the file
+                fileID                   // The actual file data
             );
         } catch (error) {
-            console.error("Appwrite serive :: uploadFile :: error", error);
-            return false;
+            // Handling errors and logging them
+            console.log("Appwrite service :: uploadFile :: error", error);
+            return false; // Returning false in case of an error
         }
     }
+    
 
     async deleteFile(fileId){
         try {
@@ -134,4 +144,4 @@ export class Service{
 
 
 const service = new Service()
-export default service;
+export default service

@@ -26,9 +26,10 @@ function App() {
     <div className='min-h-screen flex flex-wrap content-between bg-gray-400'>
       <div className='w-full block'>
         <Header />
-        <main>
-        TODO:  <Outlet />
-        </main>
+        <main style={{ fontWeight: 'bold', color: '#333', /* Add additional styles as needed */ }}>
+  VLOGS:<Outlet />
+</main>
+
         <Footer />
       </div>
     </div>

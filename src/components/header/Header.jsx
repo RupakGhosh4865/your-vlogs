@@ -38,25 +38,26 @@ function Header() {
 
 
   return (
-    <header className='py-3 shadow bg-gray-500'>
+    <header className="py-3 shadow bg-gray-800">
       <Container>
-        <nav className='flex'>
-          <div className='mr-4'>
-            <Link to='/'>
-              <Logo width='70px' />
-
-              </Link>
+        <nav className="flex items-center justify-between">
+          <div className="mr-4">
+            <Link to="/" className="flex items-center">
+              <Logo width="70px" />
+            </Link>
           </div>
-          <ul className='flex ml-auto'>
-            {navItems.map((item) => 
-            item.active ? (
-              <li key={item.name}>
-                <button
-                onClick={() => navigate(item.slug)}
-                className='inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'
-                >{item.name}</button>
-              </li>
-            ) : null
+          <ul className="flex items-center space-x-4">
+            {navItems.map((item) =>
+              item.active ? (
+                <li key={item.name}>
+                  <button
+                    onClick={() => navigate(item.slug)}
+                    className="inline-block px-4 py-2 text-white rounded-full bg-gray-700 hover:bg-gray-800 focus:outline-none focus:shadow-outline-gray"
+                  >
+                    {item.name}
+                  </button>
+                </li>
+              ) : null
             )}
             {authStatus && (
               <li>
@@ -65,9 +66,10 @@ function Header() {
             )}
           </ul>
         </nav>
-        </Container>
+      </Container>
     </header>
-  )
-}
+  );
+};
+
 
 export default Header;

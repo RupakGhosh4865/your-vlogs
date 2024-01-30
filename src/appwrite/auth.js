@@ -1,6 +1,5 @@
 import { Client, Account, ID } from "appwrite";
-
-import conf from '../conf/conf';
+import conf from '/src/conf/conf.js';
 
 export class AuthService {
     client = new Client();
@@ -8,8 +7,8 @@ export class AuthService {
 
     constructor() {
         this.client
-            .setEndpoint('https://cloud.appwrite.io/v1')
-            .setProject('6511e3898cdab127e664');
+            .setEndpoint(conf.appwriteUrl)
+            .setProject(conf.appwriteprojectid);
         this.account = new Account(this.client);
             
     }
@@ -58,6 +57,4 @@ export class AuthService {
 
 const authService = new AuthService();
 
-export default authService;
-
-
+export default authService
