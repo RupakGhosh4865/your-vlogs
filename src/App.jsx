@@ -27,8 +27,8 @@ function App() {
       <div className='w-full block'>
         <Header />
         <main style={{ fontWeight: 'bold', color: '#333', /* Add additional styles as needed */ }}>
-  VLOGS:<Outlet />
-</main>
+          VLOGS:<Outlet />
+             </main>
 
         <Footer />
       </div>
