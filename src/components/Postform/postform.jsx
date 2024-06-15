@@ -10,7 +10,7 @@ export default function PostForm({ post }) {
         defaultValues: {
             title: post?.title || "",
             slug: post?.$id || "",
-            content: post?.content || "",
+            content:  post?.content !== undefined ? post.content : "",
             status: post?.status || "active",
         },
     });
