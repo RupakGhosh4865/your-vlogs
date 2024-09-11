@@ -1,10 +1,9 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../Logo';
 
 function Footer() {
   return (
-    <section className="relative overflow-hidden py-10 bg-gray-800 text-white">
+    <section className="relative overflow-hidden py-10 bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 text-white">
       <div className="relative z-10 mx-auto max-w-7xl px-4">
         <div className="-m-6 flex flex-wrap">
           <div className="w-full p-6 md:w-1/2 lg:w-5/12">
@@ -13,7 +12,7 @@ function Footer() {
                 <Logo width="100px" />
               </div>
               <div>
-                <p className="text-sm text-gray-300">
+                <p className="text-sm">
                   &copy; Copyright 2023. All Rights Reserved by DevUI.
                 </p>
               </div>
@@ -21,39 +20,27 @@ function Footer() {
           </div>
           <div className="w-full p-6 md:w-1/2 lg:w-2/12">
             <div className="h-full">
-              <h3 className="tracking-px mb-4 text-xs font-semibold uppercase text-gray-500">
+              <h3 className="mb-4 text-xs font-semibold uppercase text-gray-200">
                 Company
               </h3>
               <ul>
                 <li className="mb-2">
-                  <Link
-                    className="text-base font-medium hover:text-gray-300"
-                    to="/"
-                  >
+                  <Link className="text-base font-medium hover:text-gray-200" to="/">
                     Features
                   </Link>
                 </li>
                 <li className="mb-2">
-                  <Link
-                    className="text-base font-medium hover:text-gray-300"
-                    to="/"
-                  >
+                  <Link className="text-base font-medium hover:text-gray-200" to="/">
                     Pricing
                   </Link>
                 </li>
                 <li className="mb-2">
-                  <Link
-                    className="text-base font-medium hover:text-gray-300"
-                    to="/"
-                  >
+                  <Link className="text-base font-medium hover:text-gray-200" to="/">
                     Affiliate Program
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    className="text-base font-medium hover:text-gray-300"
-                    to="/"
-                  >
+                  <Link className="text-base font-medium hover:text-gray-200" to="/">
                     Press Kit
                   </Link>
                 </li>
@@ -62,39 +49,27 @@ function Footer() {
           </div>
           <div className="w-full p-6 md:w-1/2 lg:w-2/12">
             <div className="h-full">
-              <h3 className="tracking-px mb-4 text-xs font-semibold uppercase text-gray-500">
+              <h3 className="mb-4 text-xs font-semibold uppercase text-gray-200">
                 Support
               </h3>
               <ul>
                 <li className="mb-2">
-                  <Link
-                    className="text-base font-medium hover:text-gray-300"
-                    to="/"
-                  >
+                  <Link className="text-base font-medium hover:text-gray-200" to="/">
                     Account
                   </Link>
                 </li>
                 <li className="mb-2">
-                  <Link
-                    className="text-base font-medium hover:text-gray-300"
-                    to="/"
-                  >
+                  <Link className="text-base font-medium hover:text-gray-200" to="/">
                     Help
                   </Link>
                 </li>
                 <li className="mb-2">
-                  <Link
-                    className="text-base font-medium hover:text-gray-300"
-                    to="/"
-                  >
+                  <Link className="text-base font-medium hover:text-gray-200" to="/">
                     Contact Us
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    className="text-base font-medium hover:text-gray-300"
-                    to="/"
-                  >
+                  <Link className="text-base font-medium hover:text-gray-200" to="/">
                     Customer Support
                   </Link>
                 </li>
@@ -103,31 +78,22 @@ function Footer() {
           </div>
           <div className="w-full p-6 md:w-1/2 lg:w-3/12">
             <div className="h-full">
-              <h3 className="tracking-px mb-4 text-xs font-semibold uppercase text-gray-500">
+              <h3 className="mb-4 text-xs font-semibold uppercase text-gray-200">
                 Legals
               </h3>
               <ul>
                 <li className="mb-2">
-                  <Link
-                    className="text-base font-medium hover:text-gray-300"
-                    to="/"
-                  >
+                  <Link className="text-base font-medium hover:text-gray-200" to="/">
                     Terms &amp; Conditions
                   </Link>
                 </li>
                 <li className="mb-2">
-                  <Link
-                    className="text-base font-medium hover:text-gray-300"
-                    to="/"
-                  >
+                  <Link className="text-base font-medium hover:text-gray-200" to="/">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    className="text-base font-medium hover:text-gray-300"
-                    to="/"
-                  >
+                  <Link className="text-base font-medium hover:text-gray-200" to="/">
                     Licensing
                   </Link>
                 </li>
@@ -141,4 +107,3 @@ function Footer() {
 }
 
 export default Footer;
-
